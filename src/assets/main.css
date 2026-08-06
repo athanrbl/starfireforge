@@ -1,0 +1,99 @@
+@import './base.css';
+
+/**/
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+/*clickable text and green class green colored*/
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+/*deeper green color on hover*/
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+/*centers objects at 1024 width and under*/
+@media (min-width: 1024px) {
+  /*body parameters at width*/
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  /*universal parameters at width*/
+  #app {
+    display: grid;
+    /*grid-template-columns: 1fr 1fr;/**/
+    grid-template-rows: 5fr 5fr;
+    padding: 0 2rem;
+    
+  }
+}
+
+/*logo class positioning*/
+.logo {
+  display: block;
+  margin: 0 auto 2rem;
+}
+
+/*h1 parameters*/
+h1 {
+  font-weight: 500;
+  font-size: 2.6rem;
+  position: relative;
+  top: -10px;
+}
+
+/*h3 parameters*/
+h3 {
+  font-size: 1.3rem;
+}
+
+/*aligncenter class parameters*/
+.aligncenter h1,
+.aligncenter h3,
+.aligncenter p {
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+/*header parameters*/
+header {
+  line-height: 1.5;
+}
+
+/*Animations*/
+
+@keyframes opacity{
+  from{
+    opacity: 100%;
+  }
+  to{
+    opacity: 0%;
+  }
+}
+
+.fadeout {
+  animation: opacity linear;
+  animation-timeline: view();
+  animation-range: exit-crossing -20%;
+}
+
+.fadein {
+  animation: opacity reverse;
+  animation-timeline: view();
+  animation-range: entry 0 cover 20%;
+}
