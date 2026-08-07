@@ -9,11 +9,11 @@ defineProps<{
 }>()
 
 const members = [
-  { name: 'Glued_Galby', tags: ['Building', 'Co-lead'] },
-  { name: 'King_WolfLIVE', tags: ['Building', 'Terraforming', 'Model Artist'] },
-  { name: 'Rinkky', tags: ['Founder', 'Terraforming', 'Modding', 'Co-lead'] },
-  { name: 'Its_Solara', tags: [' '] },
-  { name: 'Xi_the_engineer', tags: ['Building'] },
+  { name: 'Glued_Galby', tags: ['Building', 'Co-lead'], website: ' ' },
+  { name: 'King_WolfLIVE', tags: ['Building', 'Terraforming', 'Model Artist'], website: ' ' },
+  { name: 'Rinkky', tags: ['Founder', 'Terraforming', 'Modding', 'Co-lead'], website: ' ' },
+  { name: 'Its_Solara', tags: [' '], website: ' ' },
+  { name: 'Xi_the_engineer', tags: ['Building'], website: 'https://linktr.ee/xi_the_engineer' },
 ]
 
 const windowWidth = ref(window.innerWidth)
@@ -56,7 +56,7 @@ const carouselConfig = computed(() => {
         <img :src="logo" class="memberimg" />
         <h3>{{ member.name }}</h3>
         <p>{{ member.tags.join(', ') }}</p>
-        <a href="#">see more...</a>
+        <a v-bind:href="member.website">see more...</a>
       </Slide>
       <template #addons>
         <Navigation />
