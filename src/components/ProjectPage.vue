@@ -1,8 +1,6 @@
-<script setup lang="ts">
-</script>
-
 <template>
-  <div class="aligncenter fadein fadeout">
-    <h1>The Starfire Project</h1>
+  <div id="starfireproject" class="aligncenter fadein fadeout">
+    <h1>PROJECT STARFIRE</h1>
+    <p>Work in Progress</p>
   </div>
 </template>

@@ -1,20 +1,17 @@
 <script setup lang="ts">
-import Homepage from './components/Homepage.vue'
-import ProjectPage from './components/ProjectPage.vue'
+import HomePage from './components/Homepage.vue'
 import TeamPage from './components/TeamPage.vue'
 </script>
 
-<!--mounted to app id div via ts script-->
+<!--mounted to app id div via typescript-->
 <template>
-  <header style="padding-top: 15%;">
-    <Homepage msg="Starfire Forge"/>
+  <header style="margin-top: 10%">
+    <HomePage title="STARFIRE FORGE" />
+    <hr class="aligncenter" />
   </header>
   <main>
-    <div style="padding-top: 50%;">
-      <ProjectPage/>
-    </div>
-    <div style="padding-top: 50%; padding-bottom: 100%;">
-      <TeamPage/>
+    <div style="margin-top: 5%">
+      <TeamPage title="MEET THE TEAM" />
     </div>
   </main>
 </template>
