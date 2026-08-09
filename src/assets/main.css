@@ -30,23 +30,6 @@ a,
   }
 }
 
-/*centers objects at 1024 width and under*/
-@media (min-width: 1024px) {
-  /*body parameters at width*/
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  /*universal parameters at width*/
-  #app {
-    display: grid;
-    /*grid-template-columns: 1fr 1fr;/**/
-    grid-template-rows: 5fr 5fr;
-    padding: 0 2rem;
-  }
-}
-
 /*logo class positioning*/
 .logo {
   display: block;
@@ -71,6 +54,9 @@ h3 {
 .aligncenter h1,
 .aligncenter h2,
 .aligncenter h3,
+.aligncenter h4,
+.aligncenter h5,
+.aligncenter h6,
 .aligncenter p {
   text-align: center;
   padding-left: 5%;
