@@ -8,8 +8,17 @@
   background-color: #181818;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #1a1a1a;
+}
+
+section[id],
+div[id] {
+  scroll-margin-top: 2rem;
 }
 
 /*divider parameters*/
