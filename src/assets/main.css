@@ -5,6 +5,11 @@
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
+  background-color: #181818;
+}
+
+body {
+  background-color: #1a1a1a;
 }
 
 /*divider parameters*/

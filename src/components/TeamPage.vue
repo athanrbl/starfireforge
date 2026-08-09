@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed, onMounted, onBeforeUnmount, ref } from 'vue'
-import logo from '../assets/logo.svg'
 import 'vue3-carousel/carousel.css'
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
 
@@ -18,7 +17,7 @@ const members = [
   },
   {
     name: 'Rinkky',
-    tags: ['Founder', 'Terraforming', 'Modding', 'Co-lead'],
+    tags: ['Terraforming', 'Modding', 'Co-lead'],
     website: ' ',
   },
   { name: 'Its_Solara', tags: [' '], website: ' ' },
@@ -28,6 +27,18 @@ const members = [
     website: 'https://linktr.ee/xi_the_engineer',
   },
 ]
+
+const getMemberImage = (memberName: string) => {
+  const imageMap: Record<string, string> = {
+    Rinkky: new URL('../assets/Rinkky icon.png', import.meta.url).href,
+    Xi_the_engineer: new URL('../assets/Xi_the_engineer icon.png', import.meta.url).href,
+    King_WolfLIVE: new URL('../assets/King_WolfLIVE icon.png', import.meta.url).href,
+    Glued_Galby: new URL('../assets/Glued_Galby icon.png', import.meta.url).href,
+    Its_Solara: new URL('../assets/Its_Solara icon.png', import.meta.url).href,
+  }
+
+  return imageMap[memberName] ?? new URL('../assets/logo.png', import.meta.url).href
+}
 
 // width-based variables for carouselconfig
 const windowWidth = ref(window.innerWidth)
@@ -69,8 +80,14 @@ onBeforeUnmount(() => {
     <Carousel class="membergrid" v-bind="carouselConfig">
       <Slide v-for="member in members" :key="member.name" class="block membercard">
         <div id="memberslide" class="membercardalign">
-          <img :src="logo" class="memberimg" />
-          <h3 style="padding: 0; color: rgb(226, 226, 226)">{{ member.name }}</h3>
+          <img :src="getMemberImage(member.name)" :alt="member.name" class="memberimg" />
+          <h3 style="padding: 0; color: rgb(226, 226, 226)" v-if="member.name === 'Rinkky'">
+            {{ member.name }}
+            <span class="aligncenter foundertag">Founder</span>
+          </h3>
+          <h3 style="padding: 0; color: rgb(226, 226, 226)" v-else>
+            {{ member.name }}
+          </h3>
           <p>{{ member.tags.join(', ') }}</p>
         </div>
         <a v-bind:href="member.website">see more...</a>
@@ -83,6 +100,17 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
+/*the founder tag*/
+.foundertag {
+  display: inline-flex;
+  background-color: green;
+  border: 1px solid rgb(9, 73, 0);
+  padding: 1px 5px;
+  font-size: x-small;
+  border-radius: 10px;
+  vertical-align: middle;
+}
+
 /* card/slide params */
 .membercard {
   display: flex;
@@ -114,6 +142,7 @@ onBeforeUnmount(() => {
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
+  margin: 4px;
 }
 
 /*carousel params*/
