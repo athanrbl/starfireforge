@@ -8,7 +8,7 @@ defineProps<{
 <template>
   <div class="aligncenter">
     <div class="fadeout">
-      <img alt="Starfire Logo" class="logo" src="../assets/logo.svg" width="125" height="125" />
+      <img alt="Starfire Logo" class="logo" src="../assets/logo.png" />
       <h1 class="green">{{ title }}</h1>
     </div>
 
@@ -42,3 +42,21 @@ defineProps<{
     </div>
   </div>
 </template>
+
+<style scoped>
+.logo {
+  border-radius: 50%;
+}
+
+@media (min-width: 400px) {
+  .logo {
+    height: 125px;
+  }
+}
+
+@media (min-width: 600px) {
+  .logo {
+    height: 250px;
+  }
+}
+</style>
